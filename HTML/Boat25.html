@@ -5,19 +5,31 @@
     <title>Boat25</title>
 </head>
 <body>
-<h1>Boat Management</h1>
+<h1>Boat25 Management</h1>
 
-<button onclick="getAllBoats()">Get All Boats</button>
-<br>
-<div id="boats-container"></div>
+<table id="boatsTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<input type="text" id="boat-name-input" placeholder="Enter boat name">
+<input type="text" id="boat-number-input" placeholder="Enter boat number">
+<button onclick="addBoat()">Add Boat</button>
 <br>
 <button onclick="getBoatById(1)">Get Boat by ID</button>
 <br>
-<button onclick="addBoat({ name: 'Boat 1', type: 'Sailboat' })">Add Boat</button>
 <br>
-<button onclick="updateBoat(1, { name: 'Updated Boat', type: 'Motorboat' })">Update Boat</button>
+<button onclick="updateBoat(1)">Update Boat</button>
 <br>
-<button onclick="deleteBoat(1)">Delete Boat</button>
+<input type="text" id="deleteBoatByName" placeholder="Enter name">
+<button onclick="deleteBoatByName()">Delete Boat by Name</button>
+
 
 <script src="/Js/FetchBoat25.js"></script>
 
