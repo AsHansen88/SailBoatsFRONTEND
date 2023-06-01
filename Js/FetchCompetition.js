@@ -1,12 +1,11 @@
 console.log("Vi er i konkurrence")
 
-// GET all competitions
 function getAllCompetitions() {
     fetch('http://localhost:8080/konkurrence')
         .then(response => response.json())
         .then(data => {
             // Process the data
-            console.log(data);
+            displayCompetitions(data);
         })
         .catch(error => {
             // Handle error
@@ -14,6 +13,16 @@ function getAllCompetitions() {
         });
 }
 
+function displayCompetitions(competitions) {
+    const competitionsContainer = document.getElementById('competitions-container');
+    competitionsContainer.innerHTML = '';
+
+    competitions.forEach(competition => {
+        const competitionElement = document.createElement('div');
+        competitionElement.textContent = competition.name;
+        competitionsContainer.appendChild(competitionElement);
+    });
+}
 // GET competition by ID
 function getCompetitionById(competitionId) {
     fetch(`http://localhost:8080/konkurrence/${competitionId}`)
