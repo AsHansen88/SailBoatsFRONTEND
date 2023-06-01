@@ -23,18 +23,26 @@ function displayCompetitions(competitions) {
         competitionsContainer.appendChild(competitionElement);
     });
 }
-// GET competition by ID
 function getCompetitionById(competitionId) {
     fetch(`http://localhost:8080/konkurrence/${competitionId}`)
         .then(response => response.json())
         .then(data => {
             // Process the data
-            console.log(data);
+            displayCompetition(data);
         })
         .catch(error => {
             // Handle error
             console.error('Error:', error);
         });
+}
+
+function displayCompetition(competition) {
+    const competitionContainer = document.getElementById('competition-container');
+    competitionContainer.innerHTML = '';
+
+    const competitionElement = document.createElement('div');
+    competitionElement.textContent = JSON.stringify(competition);
+    competitionContainer.appendChild(competitionElement);
 }
 
 // POST a new competition
