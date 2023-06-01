@@ -33,13 +33,22 @@ function getBoatById(id) {
         .then(response => response.json())
         .then(data => {
             // Process the data
-            console.log(data);
+            displayBoatInfo(data);
         })
         .catch(error => {
             // Handle the error
             console.error(error);
         });
 }
+
+// Display the boat information on the page
+function displayBoatInfo(data) {
+    const boatInfoDiv = document.getElementById('boat-info');
+    boatInfoDiv.innerText = JSON.stringify(data);
+}
+
+// Example usage
+getBoatById(123);
 
 // Add a new boat
 function addBoat(boat) {

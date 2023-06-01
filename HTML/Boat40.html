@@ -21,37 +21,40 @@
     </div>
 </div>
 <body>
-<h1>Boat 40 feet</h1>
+<h1>40 fods deltagere</h1>
 
-<button onclick="getAllBoats()">Fetch All Boats</button>
+<button onclick="getAllBoats()">Se alle 40 fods deltagere</button><br>
 <br>
 
-<div id="boatList"></div>
+<div id="boatList"></div><br>
 <br>
-<h2>Fetch Boat by ID</h2>
-<input type="number" id="boatId">
-<button onclick="getBoatById(document.getElementById('boatId').value)">Fetch Boat</button>
+<h2>Se 40fods deltagers Id</h2><br>
 
-<h2>Add a New Boat</h2>
-<label for="boatName">Name:</label>
-<input type="text" id="boatName">
-<label for="boatNumber">Number:</label>
-<input type="text" id="boatNumber">
-<button onclick="addBoat({ name: document.getElementById('boatName').value, number: document.getElementById('boatNumber').value })">Add Boat</button>
+<div id="boat-info"></div>
 
-<h2>Update Boat</h2>
-<label for="updateBoatId">ID:</label>
-<input type="number" id="updateBoatId">
-<label for="updateBoatName">Name:</label>
-<input type="text" id="updateBoatName">
-<label for="updateBoatNumber">Number:</label>
-<input type="text" id="updateBoatNumber">
-<button onclick="updateBoat(document.getElementById('updateBoatId').value, { name: document.getElementById('updateBoatName').value, number: document.getElementById('updateBoatNumber').value })">Update Boat</button>
+<input type="number" id="boatId"><br>
+<button onclick="getBoatById(document.getElementById('boatId').value)">Fetch Boat</button><br>
 
-<h2>Delete Boat</h2>
-<label for="deleteBoatId">ID:</label>
-<input type="number" id="deleteBoatId">
-<button onclick="deleteBoat(document.getElementById('deleteBoatId').value)">Delete Boat</button>
+<h2>Tilføj 40 fods deltager</h2><br>
+<label for="boatName">Name:</label><br>
+<input type="text" id="boatName"><br>
+<label for="boatNumber">Number:</label><br>
+<input type="text" id="boatNumber"><br>
+<button onclick="addBoat({ name: document.getElementById('boatName').value, number: document.getElementById('boatNumber').value })">Add Boat</button><br>
+
+<h2>Updater båd</h2><br>
+<label for="updateBoatId">ID:</label><br>
+<input type="number" id="updateBoatId"><br>
+<label for="updateBoatName">Name:</label><br>
+<input type="text" id="updateBoatName"><br>
+<label for="updateBoatNumber">Number:</label><br>
+<input type="text" id="updateBoatNumber"><br>
+<button onclick="updateBoat(document.getElementById('updateBoatId').value, { name: document.getElementById('updateBoatName').value, number: document.getElementById('updateBoatNumber').value })">Update Boat</button><br>
+
+<h2>Slet båd</h2><br>
+<label for="deleteBoatId">ID:</label><br>
+<input type="number" id="deleteBoatId"><br>
+<button onclick="deleteBoat(document.getElementById('deleteBoatId').value)">Delete Boat</button><br>
 
 <script src="/Js/FetchBoat40.js"></script>
 
