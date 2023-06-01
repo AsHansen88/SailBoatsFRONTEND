@@ -79,9 +79,9 @@ function addBoat() {
 }
 
 function updateBoat() {
-    const boatId = document.getElementById('update-boat-id-input2').value;
-    const boatName = document.getElementById('update-boat-name-input2').value;
-    const boatNumber = document.getElementById('update-boat-number-input2').value;
+    const boatId = document.getElementById('update-boat-id-input').value;
+    const boatName = document.getElementById('update-boat-name-input').value;
+    const boatNumber = document.getElementById('update-boat-number-input').value;
 
     const boat = {
         id: boatId,
