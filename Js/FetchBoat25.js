@@ -34,8 +34,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         .catch(error => console.error('Error:', error));
 });
 
-function getBoatById(id) {
-    fetch(`http://localhost:8080/boats25/${id}`)
+function getBoatById() {
+    const boatId = document.getElementById('boat-id-input').value;
+
+    fetch(`http://localhost:8080/boats25/${boatId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -49,6 +51,7 @@ function getBoatById(id) {
             console.error(`Error: ${error.message}`);
         });
 }
+
 
 function addBoat() {
     const boatName = document.getElementById('boat-name-input').value;
