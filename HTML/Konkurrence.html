@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konkurrence</title>
+</head>
+<body>
+<h1>Competition Management</h1>
+
+<button onclick="getAllCompetitions()">Get All Competitions</button>
+
+<h2>Get Competition by ID</h2>
+<label for="competitionId">Competition ID:</label>
+<input type="text" id="competitionId" name="competitionId">
+<button onclick="getCompetitionById(document.getElementById('competitionId').value)">Get Competition</button>
+
+<h2>Add New Competition</h2>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name">
+<label for="boattype">Boat Type:</label>
+<input type="text" id="boattype" name="boattype">
+<label for="points">Points:</label>
+<input type="text" id="points" name="points">
+<button onclick="addCompetition({ name: document.getElementById('name').value, boattype: document.getElementById('boattype').value, points: document.getElementById('points').value })">Add Competition</button>
+
+<h2>Update Competition</h2>
+<label for="competitionIdUpdate">Competition ID:</label>
+<input type="text" id="competitionIdUpdate" name="competitionIdUpdate">
+<label for="nameUpdate">Name:</label>
+<input type="text" id="nameUpdate" name="nameUpdate">
+<label for="boattypeUpdate">Boat Type:</label>
+<input type="text" id="boattypeUpdate" name="boattypeUpdate">
+<label for="pointsUpdate">Points:</label>
+<input type="text" id="pointsUpdate" name="pointsUpdate">
+<button onclick="updateCompetition(document.getElementById('competitionIdUpdate').value, { name: document.getElementById('nameUpdate').value, boattype: document.getElementById('boattypeUpdate').value, points: document.getElementById('pointsUpdate').value })">Update Competition</button>
+
+<h2>Delete Competition</h2>
+<label for="competitionIdDelete">Competition ID:</label>
+<input type="text" id="competitionIdDelete" name="competitionIdDelete">
+<button onclick="deleteCompetition(document.getElementById('competitionIdDelete').value)">Delete Competition</button>
+
+<script src="/Js/FetchCompetition.js"></script>
+
+</body>
+</html>
