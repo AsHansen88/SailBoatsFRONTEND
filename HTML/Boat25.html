@@ -34,17 +34,21 @@
     <tbody></tbody>
 </table>
 
-<input type="text" id="boat-name-input" placeholder="Enter boat name">
-<input type="text" id="boat-number-input" placeholder="Enter boat number">
-<button onclick="addBoat()">Add Boat</button>
+<input type="text" id="boat-name-input" placeholder="Deltagers navn"><br>
+<input type="text" id="boat-number-input" placeholder="Bådens nummer"><br>
+<button onclick="addBoat()">Tilføj båd</button><br>
 <br>
-<button onclick="getBoatById(1)">Get Boat by ID</button>
+<button onclick="getBoatById(1)">Find båd på ID</button><br>
 <br>
 <br>
-<button onclick="updateBoat(1)">Update Boat</button>
+<input type="text" id="boat-id-input2" placeholder="Deltagers id"><br>
+<input type="text" id="boat-name-input2" placeholder="Deltagers navn"><br>
+<input type="text" id="boat-number-input2" placeholder="Bådens nummer"><br>
+<button onclick="updateBoat()">Updater Båd</button><br>
 <br>
-<input type="text" id="deleteBoatByName" placeholder="Enter name">
-<button onclick="deleteBoatByName()">Delete Boat by Name</button>
+<input type="text" id="boat-id-input" placeholder="Skriv bådens ID"><br>
+<button onclick="deleteBoatById()">Slet båd på ID</button><br>
+
 
 <script src="/Js/FetchBoat25.js"></script>
 

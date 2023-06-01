@@ -78,11 +78,21 @@ function addBoat() {
         });
 }
 
-function updateBoat(boatId, boatDetails) {
+function updateBoat() {
+    const boatId = document.getElementById('update-boat-id-input2').value;
+    const boatName = document.getElementById('update-boat-name-input2').value;
+    const boatNumber = document.getElementById('update-boat-number-input2').value;
+
+    const boat = {
+        id: boatId,
+        name: boatName,
+        number: boatNumber
+    };
+
     fetch(`http://localhost:8080/boats25/${boatId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(boatDetails)
+        body: JSON.stringify(boat)
     })
         .then(response => {
             if (!response.ok) {
@@ -98,13 +108,13 @@ function updateBoat(boatId, boatDetails) {
         });
 }
 
-function deleteBoatByName() {
-    var boatName = document.getElementById('boat-name-input').value;
 
-    fetch('http://localhost:8080/boats25', {
+function deleteBoatById() {
+    var boatId = document.getElementById('boat-id-input').value;
+
+    fetch(`http://localhost:8080/boats25/${boatId}`, {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: boatName })
+        headers: { 'Content-Type': 'application/json' }
     })
         .then(response => {
             if (!response.ok) {
@@ -116,3 +126,5 @@ function deleteBoatByName() {
             console.error(`Error: ${error.message}`);
         });
 }
+
+
