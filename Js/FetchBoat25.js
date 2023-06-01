@@ -17,7 +17,6 @@ function getAllBoats() {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-
     fetch('http://localhost:8080/boats25')
         .then(response => response.json())
         .then(data => {
@@ -51,7 +50,15 @@ function getBoatById(id) {
         });
 }
 
-function addBoat(boat) {
+function addBoat() {
+    const boatName = document.getElementById('boat-name-input').value;
+    const boatNumber = document.getElementById('boat-number-input').value;
+
+    const boat = {
+        name: boatName,
+        number: boatNumber
+    };
+
     fetch('http://localhost:8080/boats25', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -94,8 +101,10 @@ function updateBoat(boatId, boatDetails) {
 function deleteBoatByName() {
     var boatName = document.getElementById('boat-name-input').value;
 
-    fetch(`http://localhost:8080/boats25?name=${boatName}`, {
-        method: 'DELETE'
+    fetch('http://localhost:8080/boats25', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: boatName })
     })
         .then(response => {
             if (!response.ok) {
