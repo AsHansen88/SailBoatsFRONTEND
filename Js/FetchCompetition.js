@@ -2,7 +2,7 @@ console.log("Vi er i konkurrence")
 
 // GET all competitions
 function getAllCompetitions() {
-    fetch('/konkurrence')
+    fetch('http://localhost:8080/konkurrence')
         .then(response => response.json())
         .then(data => {
             // Process the data
@@ -16,7 +16,7 @@ function getAllCompetitions() {
 
 // GET competition by ID
 function getCompetitionById(competitionId) {
-    fetch(`/konkurrence/${competitionId}`)
+    fetch(`http://localhost:8080/konkurrence/${competitionId}`)
         .then(response => response.json())
         .then(data => {
             // Process the data
@@ -30,7 +30,7 @@ function getCompetitionById(competitionId) {
 
 // POST a new competition
 function addCompetition(competition) {
-    fetch('/konkurrence', {
+    fetch('http://localhost:8080/konkurrence', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function addCompetition(competition) {
 
 // PUT update competition by ID
 function updateCompetition(competitionId, competitionDetails) {
-    fetch(`/konkurrence/${competitionId}`, {
+    fetch(`http://localhost:8080/konkurrence/${competitionId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ function updateCompetition(competitionId, competitionDetails) {
 
 // DELETE competition by ID
 function deleteCompetition(competitionId) {
-    fetch(`/konkurrence/${competitionId}`, {
+    fetch(`http://localhost:8080/konkurrence/${competitionId}`, {
         method: 'DELETE'
     })
         .then(response => {
