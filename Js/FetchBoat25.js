@@ -45,7 +45,8 @@ function getBoatById() {
             return response.json();
         })
         .then(data => {
-            console.log(data); // Handle the data as needed
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = JSON.stringify(data);
         })
         .catch(error => {
             console.error(`Error: ${error.message}`);
