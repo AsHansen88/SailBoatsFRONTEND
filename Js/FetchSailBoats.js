@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const boat40 = document.getElementById('updateBoat40Input').value;
         const boat = { boat25, boat25_40, boat40 };
 
-        fetchData(`http://localhost:8080/boats/${boatId}`, {
+        fetchData(`http://localhost8080/boats/${boatId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(boat)
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const boatId = document.getElementById('deleteBoatId').value;
 
-        fetchData(`http://localhost:8080/boats/${boatId}`, {
+        fetchData(`http://localhost8080/boats/${boatId}`, {
             method: 'DELETE'
         })
             .then(data => {

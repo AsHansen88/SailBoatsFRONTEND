@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boat25</title>
+</head>
+<body>
+<h1>Boat Management</h1>
+
+<button onclick="getAllBoats()">Get All Boats</button>
+<br>
+<div id="boats-container"></div>
+<br>
+<button onclick="getBoatById(1)">Get Boat by ID</button>
+<br>
+<button onclick="addBoat({ name: 'Boat 1', type: 'Sailboat' })">Add Boat</button>
+<br>
+<button onclick="updateBoat(1, { name: 'Updated Boat', type: 'Motorboat' })">Update Boat</button>
+<br>
+<button onclick="deleteBoat(1)">Delete Boat</button>
+
+<script src="/Js/FetchBoat25.js"></script>
+
+</body>
+</html>
