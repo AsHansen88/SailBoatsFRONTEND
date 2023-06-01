@@ -1,25 +1,25 @@
 console.log("Vi er i fetchSailBoats")
 
-// Fetch all boats
+// Create a container element to display the fetched data
+const container = document.createElement('div');
+document.body.appendChild(container);
+
 fetch('http://localhost:8080/boats')
     .then(response => response.json())
     .then(data => {
-        // Process the list of boats
-        data.forEach(boat => {
-            displayBoatData(boat); // Display the boat data
+        // Iterate over the fetched data
+        data.forEach(sailboat => {
+            // Create a new element to display each sailboat
+            const sailboatElement = document.createElement('div');
+            sailboatElement.textContent = JSON.stringify(sailboat);
+            container.appendChild(sailboatElement);
         });
     })
     .catch(error => {
         console.error('Error:', error);
     });
 
-// Display boat data
-function displayBoatData(boat) {
-    var outputDiv = document.getElementById('output');
-    var boatInfo = document.createElement('div');
-    boatInfo.textContent = JSON.stringify(boat); // Modify this to format the boat data as needed
-    outputDiv.appendChild(boatInfo);
-}
+
 
 
 
