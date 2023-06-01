@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fetch all boats
     fetch("http://localhost:8080/boats25-40")
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Failed to get boats');
+            }
+        })
         .then(boats => {
             // Iterate over each boat and create a list item with CRUD buttons
             boats.forEach(boat => {
@@ -35,6 +41,38 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.log(error));
 
+    document.getElementById("addBoatForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the form data
+        const formData = new FormData(event.target);
+        const boatData = Object.fromEntries(formData.entries());
+
+        // Send a POST request to add a boat
+        fetch("http://localhost:8080/boats20-40", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(boatData)
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Failed to add boat");
+                }
+            })
+            .then(savedBoat => {
+                // Handle the response from the server
+                console.log("Boat added:", savedBoat);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+
     // Update a boat
     function updateBoat(boatId) {
         const newName = prompt("Enter new name:");
@@ -50,7 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify(boatDetails)
             })
-                .then(response => response.json())
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("Failed to update boat");
+                    }
+                })
                 .then(updatedBoat => {
                     console.log("Boat updated:", updatedBoat);
                     // Perform any necessary updates on the UI
@@ -77,4 +121,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
 
