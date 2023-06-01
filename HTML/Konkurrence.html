@@ -33,31 +33,31 @@
 <label for="competitionId">Competition ID:</label>
 <input type="text" id="competitionId" name="competitionId">
 <button onclick="getCompetitionById(document.getElementById('competitionId').value)">Get Competition</button>
-
-<h2>Tilføj ny deltager</h2>
-<label for="name">Name:</label>
-<input type="text" id="name" name="name">
-<label for="boattype">Boat Type:</label>
-<input type="text" id="boattype" name="boattype">
-<label for="points">Points:</label>
-<input type="text" id="points" name="points">
-<button onclick="addCompetition({ name: document.getElementById('name').value, boattype: document.getElementById('boattype').value, points: document.getElementById('points').value })">Add Competition</button>
+<br>
+<h2>Tilføj ny deltager</h2><br>
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name"><br>
+<label for="boattype">Boat Type:</label><br>
+<input type="text" id="boattype" name="boattype"><br>
+<label for="points">Points:</label><br>
+<input type="text" id="points" name="points"><br>
+<button onclick="addCompetition({ name: document.getElementById('name').value, boattype: document.getElementById('boattype').value, points: document.getElementById('points').value })">Add Competition</button><br>
 
 <h2>Updater deltagere</h2>
-<label for="competitionIdUpdate">Competition ID:</label>
-<input type="text" id="competitionIdUpdate" name="competitionIdUpdate">
-<label for="nameUpdate">Name:</label>
-<input type="text" id="nameUpdate" name="nameUpdate">
-<label for="boattypeUpdate">Boat Type:</label>
-<input type="text" id="boattypeUpdate" name="boattypeUpdate">
-<label for="pointsUpdate">Points:</label>
-<input type="text" id="pointsUpdate" name="pointsUpdate">
-<button onclick="updateCompetition(document.getElementById('competitionIdUpdate').value, { name: document.getElementById('nameUpdate').value, boattype: document.getElementById('boattypeUpdate').value, points: document.getElementById('pointsUpdate').value })">Update Competition</button>
+<label for="competitionIdUpdate">Competition ID:</label><br>
+<input type="text" id="competitionIdUpdate" name="competitionIdUpdate"><br>
+<label for="nameUpdate">Name:</label><br>
+<input type="text" id="nameUpdate" name="nameUpdate"><br>
+<label for="boattypeUpdate">Boat Type:</label><br>
+<input type="text" id="boattypeUpdate" name="boattypeUpdate"><br>
+<label for="pointsUpdate">Points:</label><br>
+<input type="text" id="pointsUpdate" name="pointsUpdate"><br>
+<button onclick="updateCompetition(document.getElementById('competitionIdUpdate').value, { name: document.getElementById('nameUpdate').value, boattype: document.getElementById('boattypeUpdate').value, points: document.getElementById('pointsUpdate').value })">Update Competition</button><br>
 
 <h2>Slet deltager</h2>
-<label for="competitionIdDelete">Competition ID:</label>
-<input type="text" id="competitionIdDelete" name="competitionIdDelete">
-<button onclick="deleteCompetition(document.getElementById('competitionIdDelete').value)">Delete Competition</button>
+<label for="competitionIdDelete">Competition ID:</label><br>
+<input type="text" id="competitionIdDelete" name="competitionIdDelete"><br>
+<button onclick="deleteCompetition(document.getElementById('competitionIdDelete').value)">Delete Competition</button><br>
 
 <script src="/Js/FetchCompetition.js"></script>
 
